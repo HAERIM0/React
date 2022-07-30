@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@17.0.2/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    //리랜더링
+    const root = document.getElementById("root");
+    function App() {
+        let [counter, modifier] = React.useState(0);
+        const onClick = () => {
+            counter = counter + 1;
+            modifier(987987987987);
+        };
+        return (
+            <div>
+                <h3>Total clicks: {counter} </h3>
+                <button onClick={onClick}>click me</button>
+            </div>
+        );
+    }
+    ReactDOM.render(<App />, root);
+    //state
+    // const root = document.getElementById("root");
+    // let counter = 10;
+    // function counterUp() {
+    //     counter = counter + 1;
+    //     render();
+    // }
+    // function render() {
+    //     ReactDOM.render(<Container />, root);
+    // }
+    // const Container = () => (
+    //     <div>
+    //         <h3>Total clicks:0 {counter}</h3>
+    //         <button onclick={counterUp}>click me</button>
+    //     </div>
+    // );
+    // render();
+
+</script>
+<!-- //고전 방식....
+// const root = document.getElementById("root");
+//element 생성
+// const h3 = React.createElement("h3", {
+// onMouseEnter: () => console.log("mouse enter"),
+// }, "hello world");
+// const btn = React.createElement("button", {
+// onclick: () => consloe.log("im clicked"),
+// }, "click me"); //()괄호 안에는 HTML 태그가 들어가야함
+// const container = React.createElement("div", null, [span, btn]);
+// ReactDOM.render(container, root) //render = 사용자에게 보여준다*/
+
+//JSX
+// const root = document.getElementById("root");
+// const Title = (
+// <h3 id="title" onMouseEnter={()=> console.log("안녕")}>
+    // hello world</h3>
+// );
+// const button = <button style={{ // backgroundClock: "tomato" , // }} // onclick={()=> console.log("im clicked")}
+    // >
+    // click me
+    // </button>
+// const Container = <div></div>
+// ReactDOM.render(container, root) -->
+
+</html>
