@@ -1,0 +1,8 @@
+/* h1 {
+  font-size: 100px;
+  background-color: bisque;
+} */
+body {
+  display: flex;
+  justify-content: center;
+}
