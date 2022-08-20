@@ -10,11 +10,17 @@ function App() {
   const onChange = (event) => setkeyword(event.target.value);
   console.log("i run all the time");
   useEffect(() => {
-    console.log("CALL THE API");
-  }, []);
-  useEffect(() => {
-    console.log("SEATCH FOR", keyword);
+    console.log("I run when 'keyword' changes");
   }, [keyword]);
+
+  useEffect(() => {
+    console.log("I run when 'counter' changes");
+  }, [counter]);
+
+  useEffect(() => {
+    console.log("I run when keyword & counter change");
+  }, [keyword, counter]);
+
   return (
 
     <div>
