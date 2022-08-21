@@ -11,7 +11,7 @@ function App() {
   console.log("i run all the time");
   useEffect(() => {
     console.log("I run when 'keyword' changes");
-  }, [keyword]);
+  }, [keyword]); //<- 처음 실헹(렌더)시에 딱 한번만 실행하고 다시는 하지 말기를 뜻함
 
   useEffect(() => {
     console.log("I run when 'counter' changes");
