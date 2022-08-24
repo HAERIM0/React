@@ -8,8 +8,11 @@ import Movie from "./Movie";
 function App() {
   return <Router>
     <Switch>
-      <Route path="/movie">
-        <Movie />
+      <Route path="/hello">
+        <h1>Hello</h1>
+      </Route>
+      <Route path="/movie/:id">
+        <Detail />
       </Route>
       <Route path="/">
         <Home />
