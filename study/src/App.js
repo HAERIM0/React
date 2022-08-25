@@ -1,8 +1,16 @@
-import logo from './logo.svg';
+import Composition from './components/Composition';
 import './App.css';
+import Extraction from './components/Extraction/Extraction';
 
-function App({ number }) {
-  return number % 2 === 0 ? <h1>{number}</h1> : <h3>{number}</h3>;
+function App() {
+  return (
+    <div className="App">
+      <Composition />
+      <Extraction />
+
+
+    </div>
+  );
 }
 
 export default App;
