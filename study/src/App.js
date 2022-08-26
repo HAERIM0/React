@@ -3,8 +3,11 @@
 // import Extraction from './components/Extraction/Extraction';
 // import ClassComponent from './components/State/ClassComponent';
 // import FunctionalComponent from './components/State/FunctionalComponent';
-// import Event from './components/2-1Event/Event';
-import Condition from './components/Randering/Condition';
+// // import Event from './components/2-1Event/Event';
+// import Condition from './components/Randering/Condition';
+// import List from './components/List/List';
+import Controcomponent from "./components/form/Controcomponent";
+import UncontroComponent from "./components/form/UncontroComponent";
 
 function App() {
   return (
@@ -14,7 +17,10 @@ function App() {
       <Composition />
       <Extraction /> */}
       {/* <Event /> */}
-      <Condition />
+      {/* <Condition /> */}
+      {/* <List /> */}
+      <Controcomponent />
+      <UncontroComponent />
 
 
     </div>
