@@ -6,8 +6,10 @@
 // // import Event from './components/2-1Event/Event';
 // import Condition from './components/Randering/Condition';
 // import List from './components/List/List';
-import Controcomponent from "./components/form/Controcomponent";
-import UncontroComponent from "./components/form/UncontroComponent";
+// import Controcomponent from "./components/form/Controcomponent";
+// import UncontroComponent from "./components/form/UncontroComponent";
+import State from "./components/Hooks/State";
+import Reducer from "./components/Hooks/Reducer";
 
 function App() {
   return (
@@ -19,8 +21,10 @@ function App() {
       {/* <Event /> */}
       {/* <Condition /> */}
       {/* <List /> */}
-      <Controcomponent />
-      <UncontroComponent />
+      {/* <Controcomponent />
+      <UncontroComponent /> */}
+      <State />
+      <Reducer />
 
 
     </div>
