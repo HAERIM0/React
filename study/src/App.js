@@ -8,9 +8,11 @@
 // import List from './components/List/List';
 // import Controcomponent from "./components/form/Controcomponent";
 // import UncontroComponent from "./components/form/UncontroComponent";
-import State from "./components/Hooks/State";
-import Reducer from "./components/Hooks/Reducer";
-
+// import State from "./components/Hooks/State";
+// import Reducer from "./components/Hooks/Reducer";
+// import WelcomeDialog from "./components/Composition/WelcomeDialog";
+// import Dialog from "./components/Composition/Dialog";
+import Dialog2 from "./components/Composition2/Dialog";
 function App() {
   return (
     <div className="App">
@@ -23,8 +25,11 @@ function App() {
       {/* <List /> */}
       {/* <Controcomponent />
       <UncontroComponent /> */}
-      <State />
-      <Reducer />
+      {/* <State />
+      <Reducer /> */}
+      {/* <WelcomeDialog /> */}
+      {/* <Dialog /> */}
+      <Dialog2 />
 
 
     </div>
