@@ -5,14 +5,16 @@ import './App.css';
 // import FunctionalComponent from './components/State/FunctionalComponent';
 // import ClassComponent2 from './components/LifeCycle/ClassComponent';
 // import Event from "./components/Event/Event";
-import Condition from './components/ConditionRendering/Condition';
+// import Condition from './components/ConditionRendering/Condition';
+import List from './components/List/List';
 
 
 
 function App() {
   return (
     <div className="App">
-      <Condition />
+      <List />
+      {/* <Condition /> */}
       {/* <Event /> */}
       {/* <ClassComponent2 /> */}
       {/* <FunctionalComponent />
