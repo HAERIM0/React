@@ -1,15 +1,18 @@
 
 import './App.css';
-import Button from './Components/HOC/Button';
-import Input from './Components/HOC/Input';
+import Memo from './Components/Memoization/Memo';
+// import "./CommentItem.css"
+// import Button from './Components/HOC/Button';
+// import Input from './Components/HOC/Input';
 
 function App() {
   return (
     <div className="App">
-      <Input />
+      {/* <Input />
       <br />
       <br />
-      <Button />
+      <Button /> */}
+      <Memo />
 
 
     </div>
