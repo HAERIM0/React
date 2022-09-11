@@ -1,6 +1,7 @@
 
 import './App.css';
-import Memo from './Components/Memoization/Memo';
+import Example from './Components/Context/Example';
+// import Memo from './Components/Memoization/Memo';
 // import "./CommentItem.css"
 // import Button from './Components/HOC/Button';
 // import Input from './Components/HOC/Input';
@@ -12,7 +13,8 @@ function App() {
       <br />
       <br />
       <Button /> */}
-      <Memo />
+      {/* <Memo /> */}
+      <Example />
 
 
     </div>
