@@ -1,6 +1,6 @@
 
 import './App.css';
-import Example from './Components/Context/Example';
+import Example from './Components/Portal/Example';
 // import Memo from './Components/Memoization/Memo';
 // import "./CommentItem.css"
 // import Button from './Components/HOC/Button';
