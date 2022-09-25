@@ -9,12 +9,15 @@ import Example from './Components/Portal/Example';
 function App() {
   return (
     <div className="App">
-      {/* <Input />
-      <br />
-      <br />
-      <Button /> */}
-      {/* <Memo /> */}
-      <Example />
+        if (content?.length <= 0 || content === null) {
+                alert("텍스트를 입력해주세요");
+                return;
+            }
+            //조건식
+
+
+
+
     </div>
   );
 }
