@@ -8,6 +8,8 @@ export default function Onee() {
 
   useEffect(()=>{
     setTimeout(()=>{setAlert(false)},2000)
+    setInterval();
+
   },)
   return (
     <div>
@@ -20,7 +22,7 @@ export default function Onee() {
             <h4>상품명</h4>
             <p>상품설명</p>{a}
             <div className='col-md-4'>안녕</div>
-            <img src='https://codingapple1.github.io/shop/shoes2.jpg'width="20%"></img>
+            <img src='https://codingapple1.github.io/shop/shoes2.jpg'width="20%"></img>cd 
             <h4>상품명</h4>
             <p>상품설명</p>
             <div className='col-md-4'>안녕</div>
