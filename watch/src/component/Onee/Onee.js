@@ -7,8 +7,7 @@ export default function Onee() {
   let [alert,setAlert] = useState(true)
 
   useEffect(()=>{
-    setTimeout(()=>{setAlert(false)},2000)
-    setInterval();
+    setTimeout(()=>{setAlert(true)},2000)
 
   },)
   return (
