@@ -5,6 +5,7 @@ import "./App.css";
 // import Title from "./component/Hook4/Title";
 import References from "./component/Hook5/References";
 import Click from "./component/Hook6/Click";
+import BeforeLeave from "./component/Hook7/BeforeLeave";
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
       {/* <Tab /> */}
       {/* <Title /> */}
       {/* <References /> */}
-      <Click />
+      {/* <Click /> */}
+      <BeforeLeave />
     </div>
   );
 }
