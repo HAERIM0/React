@@ -4,6 +4,7 @@ import "./App.css";
 // import Tab from "./component/Hook3/Tab";
 // import Title from "./component/Hook4/Title";
 import References from "./component/Hook5/References";
+import Click from "./component/Hook6/Click";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       {/* <Input /> */}
       {/* <Tab /> */}
       {/* <Title /> */}
-      <References />
+      {/* <References /> */}
+      <Click />
     </div>
   );
 }
