@@ -6,6 +6,8 @@ import "./App.css";
 import References from "./component/Hook5/References";
 import Click from "./component/Hook6/Click";
 import BeforeLeave from "./component/Hook7/BeforeLeave";
+import Fadeln from "./component/Hook8/Fadeln";
+import Scroll from "./component/Hook9/Scroll";
 
 function App() {
   return (
@@ -16,7 +18,9 @@ function App() {
       {/* <Title /> */}
       {/* <References /> */}
       {/* <Click /> */}
-      <BeforeLeave />
+      {/* <BeforeLeave /> */}
+      {/* <Fadeln /> */}
+      <Scroll />
     </div>
   );
 }
