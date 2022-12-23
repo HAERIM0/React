@@ -6,6 +6,7 @@ import MyComponent from "./Component/MyConponent";
 import Event from "./Component/Event";
 import ValidationSample from "./Component/ValidationSample/ValidationSample";
 import IterationSample from "./Component/IterationSample";
+import LifeCycle from "./Component/LifeCycle";
 // const App = () => {
 //   return <MyComponent name="React" />;
 // };
@@ -24,7 +25,8 @@ const App = () => {
     // <Event />
     // <ValidationSample />
     // <IterationSample />
-    <IterationSample />
+    // <IterationSample />
+    <LifeCycle />
   );
 };
 export default App;
