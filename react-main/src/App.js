@@ -5,6 +5,7 @@ import Say from "./Component/Say";
 import MyComponent from "./Component/MyConponent";
 import Event from "./Component/Event";
 import ValidationSample from "./Component/ValidationSample/ValidationSample";
+import IterationSample from "./Component/IterationSample";
 // const App = () => {
 //   return <MyComponent name="React" />;
 // };
@@ -21,7 +22,9 @@ const App = () => {
     // <Counter />
     // <Say />
     // <Event />
-    <ValidationSample />
+    // <ValidationSample />
+    // <IterationSample />
+    <IterationSample />
   );
 };
 export default App;
