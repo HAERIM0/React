@@ -109,35 +109,25 @@ import { useReducer } from "react";
 //   );
 // };
 
-// function reducer(state, action) {
-//   return {
-//     ...state,
-//     [action.name]: action.value,
-//   };
+function reducer(state, action) {
+  return {
+    ...state,
+    [action.name]: action.value,
+  };
 
-//   const [state, dispatch] = useReducer(reducer, {
-//     name: "",
-//     nickname: "",
-//   });
-//   const { name, nickname } = state;
-//   const onChange = (e) => {
-//     dispatch(e.terget);
-//   };
+  const [state, dispatch] = useReducer(reducer, {
+    name: "",
+    nickname: "",
+  });
+  const { name, nickname } = state;
+  const onChange = (e) => {
+    dispatch(e.terget);
+  };
 
-//   return (
-//     <div>
-//       <div>
-//         <input name="name" value={name} onChange={onChange} />
-//         <input name="nickname" value={nickname} onChange={onChange} />
-//       </div>
-//       <div>
-//         <div>이름 :</div>
-//         {name}
-//         <div>닉네임 :</div>
-//         {nickname}
-//       </div>
-//     </div>
-//   );
-// }
+  const onInsert = () => {
+    const nextList = list.concat(parseInt(number));
+    StyleSheetList();
+  };
+}
 
-// export default UseCounter;
+export default UseCounter;

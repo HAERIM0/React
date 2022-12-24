@@ -1,0 +1,65 @@
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.548);
+}
+
+.todoedit_insert {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h2 {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #9c88ff;
+    color: white;
+  }
+}
+
+.TodoInsert {
+  display: flex;
+  background-color: #495047;
+  input {
+    width: 100%;
+    background-color: none;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: white;
+    &::placeholder {
+      color: #dee2e6;
+    }
+  }
+  button {
+    background: none;
+    outline: none;
+    border: none;
+    background-color: #868e96;
+    color: white;
+    padding: 0 1rem;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.1s background ease-in;
+    &:hover {
+      background: #adb5bd;
+    }
+  }
+}
