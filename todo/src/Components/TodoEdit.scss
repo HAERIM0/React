@@ -28,38 +28,18 @@
     background-color: #9c88ff;
     color: white;
   }
-}
-
-.TodoInsert {
-  display: flex;
-  background-color: #495047;
   input {
-    width: 100%;
-    background-color: none;
-    outline: none;
+    margin: 2rem 0;
+    padding: 0.3rem;
     border: none;
-    padding: 0.5rem;
-    font-size: 1.125rem;
-    line-height: 1.5;
-    color: white;
-    &::placeholder {
-      color: #dee2e6;
-    }
+    outline: none;
+    border-bottom: 1px solid #9c88ff;
   }
   button {
-    background: none;
-    outline: none;
+    cursor: pointer;
+    background-color: #9c88ff;
     border: none;
-    background-color: #868e96;
     color: white;
-    padding: 0 1rem;
-    font-size: 1.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: 0.1s background ease-in;
-    &:hover {
-      background: #adb5bd;
-    }
+    padding: 0.5rem 1rem;
   }
 }
