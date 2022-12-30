@@ -15,21 +15,51 @@
 // item3.showPrice();
 
 //객체 메소드
-let n = "name";
-let a = "age";
+// let n = "name";
+// let a = "age";
 
-const user = {
-  [n]: "Mike",
-  [a]: 30,
-};
+// const user = {
+//   [n]: "Mike",
+//   [a]: 30,
+// };
 
-console.log(user);
+// console.log(user);
 
-function makeObj(key, val) {
-  return {
-    [key]: val,
-  };
-}
+// function makeObj(key, val) {
+//   return {
+//     [key]: val,
+//   };
+// }
 
-const obj = makeObj("나이", 33);
-console.log(obj);
+// const obj = makeObj("나이", 33);
+// console.log(obj);
+
+//배열 메소드
+// let arr = ["mike", "tom", "jane"];
+
+// arr.forEach((name, index) => {
+//   console.log(`${index}.${name}`);
+// });
+
+// let arr = [1, 2, 3, 4, 5];
+
+// const result = arr.find((item) => {
+//   return item % 2 === 0;
+// });
+
+// console.log(result);
+
+// let arr = [27, 8, 5, 13];
+
+// arr.sort((a, b) => {
+//   return a - b;
+// });
+// console.log(arr);
+
+let arr = [1, 2, 3, 4, 5];
+
+const result = arr.reduce((prev, cur) => {
+  return prev + cur;
+}, 100);
+
+console.log(result);
