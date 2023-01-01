@@ -56,10 +56,52 @@
 // });
 // console.log(arr);
 
-let arr = [1, 2, 3, 4, 5];
+// let arr = [1, 2, 3, 4, 5];
 
-const result = arr.reduce((prev, cur) => {
-  return prev + cur;
-}, 100);
+// const result = arr.reduce((prev, cur) => {
+//   return prev + cur;
+// }, 100);
 
-console.log(result);
+// console.log(result);
+
+// call
+
+const mike = {
+  name: "Mike",
+};
+
+// const tom = {
+//   name: "Tom",
+// };
+
+// function showThisName() {
+//   console.log(this.name);
+// }
+
+// showThisName();
+// showThisName.call(mike);
+
+//apply
+
+// function update(birthYear, occupation) {
+//   this.birthYear = birthYear;
+//   this.occupation = occupation;
+// }
+
+// update.call(mike, 1999, "singer");
+// console.log(mike);
+
+// update.call(tom, 2002, "teacher");
+// console.log(tom);
+
+//bind
+
+function update(birthYear, occupation) {
+  this.birthYear = birthYear;
+  this.occupation = occupation;
+}
+
+const updateMike = update.bind(mike);
+
+updateMike(1980, "police");
+console.log(mike);
