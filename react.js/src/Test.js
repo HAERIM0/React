@@ -130,3 +130,29 @@
 // }
 
 // const tom = new User2("Tom",19);
+
+//class 오버라이딩
+
+class car {
+  constructor(color) {
+    this.color = color;
+    this.wheels = 4;
+  }
+  drive() {
+    console.log("drive..");
+  }
+  stop() {
+    console.log("stop!");
+  }
+}
+
+class Bmw extends Car {
+  constructor(color) {
+    super(color);
+  }
+  park() {
+    console.log("PARK");
+  }
+}
+
+const z4 = new Bmw("blue");
