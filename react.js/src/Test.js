@@ -94,14 +94,39 @@
 // update.call(tom, 2002, "teacher");
 // console.log(tom);
 
-bind;
+// bind;
 
-function update(birthYear, occupation) {
-  this.birthYear = birthYear;
-  this.occupation = occupation;
-}
+// function update(birthYear, occupation) {
+//   this.birthYear = birthYear;
+//   this.occupation = occupation;
+// }
 
-const updateMike = update.bind(mike);
+// const updateMike = update.bind(mike);
 
-updateMike(1980, "police");
-console.log(mike);
+// updateMike(1980, "police");
+// console.log(mike);
+
+//class
+
+// const User = function (name,age){
+//   this.name = name;
+//   this.age = age;
+// }
+
+// User.prototype.showName = function(){
+//   console.log(this.name);
+// }
+
+// const mike = new User("Mike",30);
+
+// class User2{
+//   constructor(name,age){
+//     this.name = name;
+//     this.age = age;
+//   }
+//   showName(){
+//     console.log(this.name);
+//   }
+// }
+
+// const tom = new User2("Tom",19);
