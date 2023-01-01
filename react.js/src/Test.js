@@ -133,26 +133,60 @@
 
 //class 오버라이딩
 
-class car {
-  constructor(color) {
-    this.color = color;
-    this.wheels = 4;
-  }
-  drive() {
-    console.log("drive..");
-  }
-  stop() {
-    console.log("stop!");
-  }
-}
+// class car {
+//   constructor(color) {
+//     this.color = color;
+//     this.wheels = 4;
+//   }
+//   drive() {
+//     console.log("drive..");
+//   }
+//   stop() {
+//     console.log("stop!");
+//   }
+// }
 
-class Bmw extends Car {
-  constructor(color) {
-    super(color);
-  }
-  park() {
-    console.log("PARK");
-  }
-}
+// class Bmw extends Car {
+//   constructor(color) {
+//     super(color);
+//   }
+//   park() {
+//     console.log("PARK");
+//   }
+// }
 
-const z4 = new Bmw("blue");
+// const z4 = new Bmw("blue");
+
+//프로미스(promise)
+
+const f1 = () => {
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      res("1번 주문 완료");
+    }, 1000);
+  });
+};
+
+const f2 = (message) => {
+  console.log(message);
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      res("2번 주문 완료");
+    }, 3000);
+  });
+};
+
+const f3 = (message) => {
+  console.log(message);
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      res("3번 주문 완료");
+    }, 2000);
+  });
+};
+
+f1()
+.then((res) => f2(res));
+.then((res) => f3(res));
+.then((res) => console.log(res));
+.catch(console.log)
