@@ -66,9 +66,9 @@
 
 // call
 
-const mike = {
-  name: "Mike",
-};
+// const mike = {
+//   name: "Mike",
+// };
 
 // const tom = {
 //   name: "Tom",
@@ -81,27 +81,15 @@ const mike = {
 // showThisName();
 // showThisName.call(mike);
 
-//apply
-
-// function update(birthYear, occupation) {
-//   this.birthYear = birthYear;
-//   this.occupation = occupation;
-// }
-
-// update.call(mike, 1999, "singer");
-// console.log(mike);
-
-// update.call(tom, 2002, "teacher");
-// console.log(tom);
-
-//bind
+apply;
 
 function update(birthYear, occupation) {
   this.birthYear = birthYear;
   this.occupation = occupation;
 }
 
-const updateMike = update.bind(mike);
-
-updateMike(1980, "police");
+update.call(mike, 1999, "singer");
 console.log(mike);
+
+update.call(tom, 2002, "teacher");
+console.log(tom);
