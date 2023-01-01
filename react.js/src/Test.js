@@ -81,15 +81,27 @@
 // showThisName();
 // showThisName.call(mike);
 
-apply;
+// apply;
+
+// function update(birthYear, occupation) {
+//   this.birthYear = birthYear;
+//   this.occupation = occupation;
+// }
+
+// update.call(mike, 1999, "singer");
+// console.log(mike);
+
+// update.call(tom, 2002, "teacher");
+// console.log(tom);
+
+bind;
 
 function update(birthYear, occupation) {
   this.birthYear = birthYear;
   this.occupation = occupation;
 }
 
-update.call(mike, 1999, "singer");
-console.log(mike);
+const updateMike = update.bind(mike);
 
-update.call(tom, 2002, "teacher");
-console.log(tom);
+updateMike(1980, "police");
+console.log(mike);
