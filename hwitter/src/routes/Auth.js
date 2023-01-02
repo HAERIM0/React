@@ -1,16 +1,23 @@
-import { async } from "@firebase/util";
-import { authService } from "fbase";
+import { authService } from "../fbase";
 import React, { useState } from "react";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  GoogleAuthProvider,
+  signInWithPopup,
+} from "@firebase/auth";
 
 const Auth = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [newAccount, setNewAccount] = useState(true);
   const [error, setError] = useState("");
-  const onChange = (event) => {
+
+  const handleOnChange = (e) => {
     const {
       target: { name, value },
-    } = event;
+    } = e;
+
     if (name === "email") {
       setEmail(value);
     } else if (name === "password") {
@@ -18,17 +25,16 @@ const Auth = () => {
     }
   };
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
+  const handleOnSubmit = async (e) => {
+    e.preventDefault();
     try {
       let data;
       if (newAccount) {
-        data = await authService.createUserWithEmailAndPassword(
+        data = await createUserWithEmailAndPassword(
+          authService,
           email,
           password
         );
-      } else {
-        data = await authService.signInWithEmailAndPassword(email, password);
       }
       console.log(data);
     } catch (error) {
@@ -36,17 +42,32 @@ const Auth = () => {
     }
   };
 
-  const toggleAccount = () => setNewAccount((prev) => !prev);
+  const toggleAccount = () => {
+    setNewAccount((prev) => !prev);
+  };
+
+  const handleOnSocialClick = async (e) => {
+    const {
+      target: { name },
+    } = e;
+
+    let provider;
+    if (name === "google") {
+      provider = new GoogleAuthProvider();
+    }
+    const data = await signInWithPopup(authService, provider);
+  };
+
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={handleOnSubmit}>
         <input
           name="email"
-          type="email"
+          type="text"
           placeholder="Email"
           required
           value={email}
-          onChange={onChange}
+          onChange={handleOnChange}
         />
         <input
           name="password"
@@ -54,18 +75,24 @@ const Auth = () => {
           placeholder="Password"
           required
           value={password}
-          onChange={onChange}
+          onChange={handleOnChange}
         />
-        <input type="submit" value={newAccount ? "Create Account" : "Log In"} />
+        <input
+          type="submit"
+          value={newAccount ? "Create Account" : "Sign In"}
+        />
         {error}
       </form>
       <span onClick={toggleAccount}>
-        {newAccount ? "Log in" : "Create Account"}
+        {newAccount ? "Sign In" : "Create Account"}
       </span>
       <div>
-        <button>Continue with Google</button>
+        <button name="google" onClick={handleOnSocialClick}>
+          Continue with Google
+        </button>
       </div>
     </div>
   );
 };
+
 export default Auth;
