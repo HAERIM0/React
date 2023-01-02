@@ -1,27 +1,42 @@
-// import { dbService } from "fBase";
 import { dbService } from "fbase";
-import { addDoc, collection } from "firebase/firestore";
-import React, { useState } from "react";
+import { collection, addDoc, getDocs } from "firebase/firestore";
+import React, { useEffect, useState } from "react";
 
 const Home = () => {
   const [hweet, setHweet] = useState("");
-  const onSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const docRef = await addDoc(collection(dbService, "hweets"), {
-        hweet,
-        createdAt: Date.now(),
-      });
-      console.log("Document written with ID: ", docRef.id);
-    } catch (error) {
-      console.error("Error adding document: ", error);
-    }
+  const [hweets, setHweets] = useState([]);
+  const getHweets = async () => {
+    const dbNweets = await getDocs(collection(dbService, "nweets"));
+    dbNweets.forEach((doc) => {
+      const nweetObject = {
+        ...doc.data(),
+        id: doc.id,
+      };
+      console.log(doc.id, " => ", doc.data());
+      setHweets((prev) => [nweetObject, ...prev]);
+    });
+  };
 
+  useEffect(() => {
+    getHweets();
+  }, []);
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    await addDoc(collection(dbService, "nweets"), {
+      hweet,
+      createAt: Date.now(),
+    });
     setHweet("");
   };
-  const onChange = ({ target: { value } }) => {
+
+  const onChange = (event) => {
+    const {
+      target: { value },
+    } = event;
     setHweet(value);
   };
+
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -34,7 +49,15 @@ const Home = () => {
         />
         <input type="submit" value="hweet" />
       </form>
+      <div>
+        {hweets.map((hweet) => (
+          <div key={hweet.id}>
+            <h4>{hweet.hweet}</h4>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
+
 export default Home;
