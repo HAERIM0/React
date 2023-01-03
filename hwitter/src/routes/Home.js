@@ -1,63 +1,110 @@
+import React, { useState, useEffect } from "react";
+// import { dbService } from "../fbase";
 import { dbService } from "fbase";
-import { collection, addDoc, getDocs } from "firebase/firestore";
-import React, { useEffect, useState } from "react";
+import {
+  collection,
+  addDoc,
+  query,
+  onSnapshot,
+  orderBy,
+  serverTimestamp,
+} from "@firebase/firestore";
+import Nweet from "components/Nweet";
 
-const Home = () => {
-  const [hweet, setHweet] = useState("");
-  const [hweets, setHweets] = useState([]);
-  const getHweets = async () => {
-    const dbNweets = await getDocs(collection(dbService, "nweets"));
-    dbNweets.forEach((doc) => {
-      const nweetObject = {
-        ...doc.data(),
-        id: doc.id,
-      };
-      console.log(doc.id, " => ", doc.data());
-      setHweets((prev) => [nweetObject, ...prev]);
-    });
-  };
+const Home = ({ userObj }) => {
+  const [nweet, setNweet] = useState("");
+  const [nweets, setNweets] = useState([]);
+  const [attachment, setAttachment] = useState();
 
   useEffect(() => {
-    getHweets();
+    // 실시간으로 데이터를 데이터베이스에서 가져오기
+
+    const q = query(
+      collection(dbService, "nweets"),
+      orderBy("createdAt", "desc")
+    );
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const nextNweets = querySnapshot.docs.map((doc) => {
+        return {
+          id: doc.id,
+          ...doc.data(),
+        };
+      });
+      setNweets(nextNweets);
+    });
+
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    await addDoc(collection(dbService, "nweets"), {
-      hweet,
-      createAt: Date.now(),
+  const handleOnSubmit = async (e) => {
+    e.preventDefault();
+
+    const docRef = await addDoc(collection(dbService, "nweets"), {
+      text: nweet,
+      createdAt: serverTimestamp(),
+      creatorId: userObj.uid,
     });
-    setHweet("");
+
+    console.log("Document written with ID: ", docRef.id);
+
+    setNweet("");
   };
 
-  const onChange = (event) => {
+  const handleOnChange = (e) => {
     const {
       target: { value },
-    } = event;
-    setHweet(value);
+    } = e;
+    setNweet(value);
   };
+
+  const onFileChange = (event) => {
+    const {
+      target: { files },
+    } = event;
+    const theFile = files[0];
+    const reader = new FileReader();
+    reader.onloadend = (finishedEvent) => {
+      const {
+        currentTarget: { result },
+      } = finishedEvent;
+      setAttachment(result);
+    };
+    reader.readAsDataURL(theFile);
+  };
+
+  const onClearAttachment = () => setAttachment(null);
 
   return (
     <div>
-      <form onSubmit={onSubmit}>
+      <form onSubmit={handleOnSubmit}>
         <input
-          value={hweet}
-          onChange={onChange}
           type="text"
           placeholder="What's on your mind?"
           maxLength={120}
+          onChange={handleOnChange}
+          value={nweet}
         />
-        <input type="submit" value="hweet" />
+        <input type="file" accept="image/*" onChange={onFileChange} />
+        <input type="submit" value="Nweet" />
+        {attachment && (
+          <div>
+            <img src={attachment} width="50px" height="50px" />
+            <button onClick={onClearAttachment}>Clear</button>
+          </div>
+        )}
       </form>
       <div>
-        {hweets.map((hweet) => (
-          <div key={hweet.id}>
-            <h4>{hweet.hweet}</h4>
-          </div>
+        {nweets.map((nweet) => (
+          <Nweet
+            key={nweet.id}
+            nweetObj={nweet}
+            isOwner={nweet.creatorId === userObj.uid}
+          />
         ))}
       </div>
     </div>
   );
 };
-
 export default Home;
