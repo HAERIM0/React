@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 // import { dbService } from "../fbase";
-import { dbService } from "fbase";
+import { v4 as uuidv4 } from "uuid";
+import { dbService, storageService } from "fbase";
+import { ref, uploadString } from "@firebase/storage";
+
+import "firebase/storage";
 import {
   collection,
   addDoc,
@@ -40,16 +44,16 @@ const Home = ({ userObj }) => {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-
-    const docRef = await addDoc(collection(dbService, "nweets"), {
-      text: nweet,
-      createdAt: serverTimestamp(),
-      creatorId: userObj.uid,
-    });
-
-    console.log("Document written with ID: ", docRef.id);
-
-    setNweet("");
+    const fileRef = ref(storageService, `${userObj.uid}/${uuidv4()}`);
+    // const fileRef = storageService.ref().child(`${userObj.uid}/${uuidv4()}`);
+    // const response = await fileRef.putString(attachment, "data_url");
+    const response = await uploadString(fileRef, attachment, "data_url");
+    // const docRef = await addDoc(collection(dbService, "nweets"), {
+    //   text: nweet,
+    //   createdAt: serverTimestamp(),
+    //   creatorId: userObj.uid,
+    // });
+    // setNweet("");
   };
 
   const handleOnChange = (e) => {
