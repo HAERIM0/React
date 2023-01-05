@@ -4,12 +4,13 @@ import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { async } from "@firebase/util";
 
-const Profile = ({ userObj }) => {
+const Profile = ({ userObj, refreshUser }) => {
   const history = useHistory();
   const [newDisplayName, setNewDisplayName] = useState(userObj.displayName);
 
   const handleOnLogOutClick = () => {
     authService.signOut();
+    // authService.currentUser.uid;
     history.push("/");
   };
 
@@ -34,6 +35,7 @@ const Profile = ({ userObj }) => {
       await userObj.updateProfile({
         displayName: newDisplayName,
       });
+      refreshUser();
     }
   };
 
