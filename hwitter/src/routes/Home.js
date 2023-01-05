@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 // import { dbService } from "../fbase";
 import { v4 as uuidv4 } from "uuid";
 import { dbService, storageService } from "fbase";
-import { ref, uploadString } from "@firebase/storage";
+import { ref, uploadString, getDownloadURL } from "@firebase/storage";
 
 import "firebase/storage";
 import {
@@ -18,7 +18,7 @@ import Nweet from "components/Nweet";
 const Home = ({ userObj }) => {
   const [nweet, setNweet] = useState("");
   const [nweets, setNweets] = useState([]);
-  const [attachment, setAttachment] = useState();
+  const [attachment, setAttachment] = useState("");
 
   useEffect(() => {
     // 실시간으로 데이터를 데이터베이스에서 가져오기
@@ -44,16 +44,34 @@ const Home = ({ userObj }) => {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-    const fileRef = ref(storageService, `${userObj.uid}/${uuidv4()}`);
-    // const fileRef = storageService.ref().child(`${userObj.uid}/${uuidv4()}`);
-    // const response = await fileRef.putString(attachment, "data_url");
-    const response = await uploadString(fileRef, attachment, "data_url");
-    // const docRef = await addDoc(collection(dbService, "nweets"), {
+    let attachmentUrl = "";
+    if (attachment !== "") {
+      const attachmentRef = ref(storageService, `${userObj.uid}/${uuidv4()}`);
+      const response = await uploadString(
+        attachmentRef,
+        attachment,
+        "data_url"
+      );
+      attachmentUrl = await getDownloadURL(response.ref);
+    }
+    const nweetObj = {
+      text: nweet,
+      createdAt: Date.now(),
+      creatorId: userObj.uid,
+      attachmentUrl,
+    };
+    // const attachmentRef = ref(storageService, `${userObj.uid}/${uuidv4()}`);
+    // const response = await uploadString(attachmentRef, attachment, "data_url");
+    // const attachmentUrl = await getDownloadURL(response.ref);
+    // const nweetObj = {
     //   text: nweet,
-    //   createdAt: serverTimestamp(),
+    //   createdAt: Date.now(),
     //   creatorId: userObj.uid,
-    // });
-    // setNweet("");
+    //   attachmentUrl,
+    // };
+    const docRef = await addDoc(collection(dbService, "nweets"), nweetObj);
+    setNweet("");
+    setAttachment("");
   };
 
   const handleOnChange = (e) => {
@@ -78,8 +96,7 @@ const Home = ({ userObj }) => {
     reader.readAsDataURL(theFile);
   };
 
-  const onClearAttachment = () => setAttachment(null);
-
+  const onClearAttachment = () => setAttachment("");
   return (
     <div>
       <form onSubmit={handleOnSubmit}>
