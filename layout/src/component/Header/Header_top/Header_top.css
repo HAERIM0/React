@@ -1,0 +1,42 @@
+.headerTop_Box {
+  display: flex;
+}
+
+.headerTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 49px;
+  background-color: rgb(255, 246, 229);
+}
+
+.aiFillWarning-Img {
+  display: flex;
+  color: red;
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.header-Text {
+  font-size: 16px;
+}
+
+.header-DowImg {
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(32, 32, 243);
+  color: white;
+  width: 90px;
+  height: 30px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.header-X {
+  display: flex;
+  margin-left: 130px;
+  font-size: 11px;
+  color: grey;
+}

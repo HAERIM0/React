@@ -1,0 +1,49 @@
+.naver-Logo {
+  width: 230px;
+  /* margin-left: -60px; */
+}
+
+.navtop-Logo {
+}
+
+.navTop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -200px;
+}
+
+.search-Input {
+  width: 450px;
+  height: 40px;
+  margin-left: 15px;
+  border: 0;
+  outline: 0;
+}
+
+.search-Button {
+  /* display: flex;
+  align-items: center; */
+  width: 50px;
+  height: 45px;
+  border: 0;
+  outline: 0;
+  border-left: 1px solid rgb(10, 198, 10);
+  color: white;
+  background-color: rgb(10, 198, 10);
+  margin-left: 12px;
+}
+
+.navtop-Search {
+  display: flex;
+  /* margin-right: -10px; */
+}
+
+.navtop-Search {
+  display: flex;
+  border: 2px solid rgb(10, 198, 10);
+}
+
+.outlingSearch-Img {
+  font-size: 20px;
+}

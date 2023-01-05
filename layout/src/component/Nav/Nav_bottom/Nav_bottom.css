@@ -1,0 +1,52 @@
+.navbottom-Box {
+  display: flex;
+}
+
+.navbottom-Bottom {
+  display: flex;
+}
+.navbottom-Top {
+  display: flex;
+  align-items: center;
+  color: rgb(10, 198, 10);
+  /* margin-right: 12px; */
+  word-spacing: 12px;
+  /* padding: 10px;px */
+  /* margin: 20px; */
+}
+
+.df {
+  word-spacing: 12px;
+}
+
+.navbottom-Box {
+  margin-left: 10px;
+}
+
+/* .a {
+  margin-right: 12px;
+}
+
+.b {
+  margin-right: 12px;
+}
+
+.c {
+  margin-right: 12px;
+}
+
+.d {
+  margin-right: 12px;
+}
+
+.e {
+  margin-right: 12px;
+}
+
+.f {
+  margin-right: 12px;
+}
+
+.g {
+  margin-right: 12px;
+} */
