@@ -1,29 +1,36 @@
 .navbottom-Box {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  border-top: 0.5px solid rgb(224, 224, 224);
+  border-bottom: 0.1px solid rgb(224, 224, 224);
+  box-shadow: 0px 2px 2px 1px rgb(247, 247, 247);
+  height: 50px;
 }
 
 .navbottom-Bottom {
   display: flex;
+  align-items: center;
+  font-size: 15px;
 }
 .navbottom-Top {
   display: flex;
   align-items: center;
   color: rgb(10, 198, 10);
-  /* margin-right: 12px; */
-  word-spacing: 12px;
-  /* padding: 10px;px */
-  /* margin: 20px; */
+  margin-right: 12px;
+  font-size: 14.5px;
 }
 
-.df {
-  word-spacing: 12px;
+.navbottom-Middle {
+  font-size: 14.5px;
 }
 
 .navbottom-Box {
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
-/* .a {
+.a {
   margin-right: 12px;
 }
 
@@ -49,4 +56,68 @@
 
 .g {
   margin-right: 12px;
-} */
+}
+
+.aa {
+  margin-right: 12px;
+}
+
+.bb {
+  margin-right: 12px;
+}
+
+.cc {
+  margin-right: 12px;
+}
+
+.dd {
+  margin-right: 12px;
+}
+
+.ee {
+  margin-right: 12px;
+}
+
+.ff {
+  margin-right: 12px;
+}
+
+.gg {
+  margin-right: 12px;
+}
+
+.hh {
+  margin-right: 17px;
+}
+
+.navbottom-the {
+  display: flex;
+  align-items: center;
+  margin-right: 90px;
+  font-size: 12px;
+}
+
+.Nav-Ling {
+  color: rgb(221, 221, 221);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.navbottom-W {
+  color: rgb(77, 77, 77);
+  margin-left: -10px;
+}
+
+.faceSmile-Img {
+  font-size: 18px;
+  color: green;
+}
+
+.navbottom-Mw {
+  color: rgb(77, 77, 77);
+}
+
+.faceMeh-Img {
+  font-size: 18px;
+  color: rgb(255, 238, 0);
+}

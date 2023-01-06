@@ -1,17 +1,14 @@
-import logo from "./logo.svg";
 import "./App.css";
-import Header_top from "./component/Header/Header_top/Header_top";
-import Header_bottom from "./component/Header/Header_bottom/Header_bottom";
-import Nav_top from "./component/Nav/Nav_top/Nav_top";
-import Nav_bottom from "./component/Nav/Nav_bottom/Nav_bottom";
+import Header from "./component/Header/Header";
+import Nav from "./component/Nav/Nav";
+import Section from "./component/Section/Section";
 
 function App() {
   return (
     <div className="App">
-      <Header_top />
-      <Header_bottom />
-      <Nav_top />
-      <Nav_bottom />
+      <Header />
+      <Nav />
+      <Section />
     </div>
   );
 }
