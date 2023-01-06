@@ -1,0 +1,41 @@
+.asidebottom-Box {
+  /* display: flex; */
+  margin-left: 830px;
+  /* width: 330px; */
+}
+
+.asidebottom-List {
+  display: flex;
+  align-items: center;
+  margin-left: 290px;
+  margin-top: 10px;
+  border: 1px solid rgb(191, 191, 191);
+  width: 330px;
+  height: 40px;
+}
+
+.showtwo-Img {
+  width: 330px;
+}
+
+.aside-Ling {
+  margin-left: 10px;
+  color: rgb(221, 221, 221);
+}
+
+.asidebottom-Live {
+  font-size: 13px;
+  margin-left: 14px;
+}
+
+.showtwo-Box {
+  margin-top: 15px;
+}
+
+.liveFill-Img {
+  /* margin-top: 5px; */
+}
+
+.livelist-Box {
+  margin-left: 15px;
+}

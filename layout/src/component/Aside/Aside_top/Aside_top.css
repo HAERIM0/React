@@ -1,0 +1,46 @@
+.asidetop-Box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  /* align-items: center; */
+  margin-left: 1120px;
+  margin-top: -505px;
+  border: 1px solid rgb(191, 191, 191);
+  width: 330px;
+  height: 120px;
+  background-color: rgb(247, 247, 247);
+  /* flex-direction: column; */
+}
+
+.asidetop-Text {
+  font-size: 12.5px;
+  color: rgb(147, 147, 147);
+  margin-left: -60px;
+}
+
+.naverlogin-Bt {
+  background-color: rgb(10, 198, 10);
+  margin-top: 10px;
+  color: white;
+  font-size: 16px;
+  border: 0;
+  outline: 0;
+  width: 300px;
+  height: 45px;
+}
+
+.naverjoin-Box {
+  font-size: 12px;
+  display: flex;
+  margin-left: 15px;
+  margin-top: 14px;
+  color: rgb(147, 147, 147);
+}
+
+.naverjoin-Box {
+}
+
+.naver-join {
+  margin-left: 105px;
+  /* color: rgb(147, 147, 147); */
+}
